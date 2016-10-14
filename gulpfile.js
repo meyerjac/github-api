@@ -21,8 +21,6 @@ var lib = require('bower-files')({
 var browserSync = require('browser-sync').create();
 
 
-
-
 gulp.task('jsBrowserify', function() {
   return browserify({ entries: ['./js/github-interface.js'] })
     .bundle()
@@ -35,7 +33,6 @@ gulp.task("minifyScripts", ["jsBrowserify"], function(){
     .pipe(uglify())
     .pipe(gulp.dest("./build/js"));
 });
-
 gulp.task('build', ['clean'], function(){
   if (buildProduction) {
     gulp.start('minifyScripts');
@@ -48,8 +45,6 @@ gulp.task('build', ['clean'], function(){
 gulp.task("clean", function(){
   return del(['build', 'tmp']);
 });
-
-
 
 gulp.task('bowerBuild', ['bower'], function(){
   browserSync.reload();
