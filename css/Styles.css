@@ -2,7 +2,6 @@ body {
   background-color: #7c9ed6;
   font-family: inherit;
   font-size: 30px;
-
 }
 
 .container {
@@ -12,5 +11,12 @@ body {
 
 .jumbotron {
   background: #ba5071;
+}
 
+ol {
+  color: red;
+}
+
+.repotitle {
+  color: #456780;
 }

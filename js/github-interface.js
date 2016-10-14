@@ -1,14 +1,11 @@
 var User = require('./../js/github.js').userModule;
 var apiKey = require('./../.env').apiKey;
 
-
 $(document).ready(function() {
-  // var newUser = new User("string")
+  var newUser = new User("string");
   $('#usernameForm').submit(function(event){
     event.preventDefault();
     var username = $('#username').val();
-
-    // getting the name and bio from the username that was inputted
 
     $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response){
       console.log(response);
@@ -18,31 +15,25 @@ $(document).ready(function() {
       console.log(error.responseJSON.message);
     });
 
-    // getting the time each one was created at, and repos
     var repoNames = [];
-    var timeCreated = [];
+    var descriptionArray = [];
     $.get('https://api.github.com/users/' + username + '/repos' + '?access_token=' + apiKey).then(function(response) {
       console.log(response);
-
       for(var i = 0; i< response.length; i++) {
         repoNames.push(response[i].name);
-        timeCreated.push(response[i].created_at);
+        descriptionArray.push(response[i].description);
       }
 
-
-      $('.repoName').text(username + " 's'" + " list of repo's, and when they were created can be seen below"); {
+      $('.repotitle').text(username + " 's'" + " list of repo's, and the description along with them can be seen below"); {
         var counter = 0;
-
-        repoNames.forEach(function(repoNames) {
-          console.log(repoNames);
-          console.log(timeCreated);
-          $('.repoName').append("<li>" + repoNames + "</li>");
-          counter++;
+        descriptionArray.forEach(function(descriptionArray) {
+          repoNames.forEach(function(repoNames) {
+            $('.repoName').append("<li>" + repoNames + "</li>");
+            $('.repoName').append("<ol>"  + descriptionArray + "</ol>");
+            counter++;
+          });
         });
       }
     });
-
-
-
   });
 });
