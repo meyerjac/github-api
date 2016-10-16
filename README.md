@@ -11,10 +11,11 @@ _The purpose of this application is to demonstrate that we can produce a working
 ## Setup/Installation Requirements
 
 * _To see the working project please clone the file from my github, it can be found here: https://github.com/meyerjac/github-api_
+* _you will need to get an API key from github, or use mine: "b007f56453a660eb2f3a1e744d61ff52e0c2fb7a", you will need to set the api to a variable call apiKey in the top of my gitub.js folder, e.g apiKey = "b007f56453a660eb2f3a1e744d61ff52e0c2fb7a".
 * _navigate to the my folder and open it in a text editor such as atom or sublime_
-* _then in your terminal, navigate into the top level of the project and run npm install, this will install all the necessary packages and package managers that are running my code_
-* _run gulp build in the terminal, and run gulp serve which will start a server for your code and it will open the index in a web browser _
-* _ANYTHING ELSE TO SAYYYYYYYYYYYYYSDFYSDFSDFK>SFD<MS><DFMNS<>DMFN<>SNF><NF<>SND<MDMS<>FN<>SMM<>DFN<>SMFD<>MF<>MS<>_
+* _then in your terminal, navigate into the top level of the project and run npm install, this will install all the necessary packages and package managers that are running my code, then bower install_
+* _run gulp build in the terminal, and run gulp serve which will start a server for your code and it will open the index in a web browser_
+* _then just enter a github username in the text entry and it will spit out some info about that username, Enjoy!_
 
 _I am using my own unique API key, if you want to plug in your github API key you can just get once from your github account_
 
