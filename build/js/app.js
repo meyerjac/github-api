@@ -22,9 +22,10 @@ $(document).ready(function() {
     };
 
     User.prototype.displayRepoListToHtml = function() {
+      debugger;
       for(var i = 0; i< userNow.repoList.length; i++) {
-        $('.repoName').append("<li>" + userNow.repoList[i].name + "</li>") +
-        $('.repoDescription').append("<li>" + userNow.repoList[i].description + "</li>");
+        $('.repo').append("<li>" + userNow.repoList[i].name + "</li>") +
+        $('.repo').append("<li>" + userNow.repoList[i].description + "</li>" + "<br>");
     }
 };
   });
