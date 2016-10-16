@@ -11,7 +11,7 @@
   <div class="container">
     <div class="jumbotron">
       <h1>User</h1>
-      <form id="usernameForm">
+      <form id="usernameInput">
         <div class="form-group">
           <label for="username">Enter a Github Username</label>
           <input id="username" type="text">
@@ -19,12 +19,25 @@
         </div>
       </form>
     </div>
-    <h2 id="results"></h2>
-    <p id = "name"></p>
-    <p id = "bio"></p>
-    <h1 class = "repotitle"></h1>
-    <br><br>
-    <ul class = "repoName"></ul>
+
+    <div class="results">
+
+      <div class="info">
+          <p class= "avatar"></p>
+          <p class= "bio"></p>
+          <p class= "created"></p>
+          <p class= "login"></p>
+          <p class= "name"></p>
+          <p class= "repoNumber"></p>
+      </div>
+
+      <div class="repos">
+
+      </div>
+
+    </div>
+
+
   </div>
 </body>
 </html>
