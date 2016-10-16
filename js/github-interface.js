@@ -18,12 +18,10 @@ $(document).ready(function() {
     };
 
     User.prototype.displayRepoListToHtml = function() {
-      console.log("hello");
-      // for(var i = 0; i< response.length; i++) {
-      //   repoNames.push(response[i].name);
-      //   descriptionArray.push(response[i].description);
-      // }
-
-    };
+      for(var i = 0; i< userNow.repoList.length; i++) {
+        $('.repoName').append("<li>" + userNow.repoList[i].name + "</li>") +
+        $('.repoDescription').append("<li>" + userNow.repoList[i].description + "</li>");
+    }
+};
   });
 });
