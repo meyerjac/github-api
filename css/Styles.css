@@ -13,10 +13,12 @@ body {
   background: #ba5071;
 }
 
-ol {
+.info {
   color: red;
+  display:none;
 }
 
-.repotitle {
-  color: #456780;
+p {
+  font-size: 15px;
+  color: blue;
 }

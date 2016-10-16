@@ -10,13 +10,12 @@ $(document).ready(function() {
     event.preventDefault();
     var username = $('#username').val();
     newUser.getInfo(username);
+    $('.info').show();
 
     User.prototype.displayInfoToHtml = function() {
-      debugger;
       $('.avatar').text(userNow.userInfo.avatar_url);
-      debugger;
       $('.bio').text(userNow.userInfo.bio);
-      $('.created').text(userNow.userInfo.created_At);
+      $('.created').text(userNow.userInfo.created_at);
       $('.login').text(userNow.userInfo.login);
       $('.name').text(userNow.userInfo.name);
       $('.repoNumber').text(userNow.userInfo.public_repos);
