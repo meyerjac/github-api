@@ -1,18 +1,18 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-exports.apiKey = "b007f56453a660eb2f3a1e744d61ff52e0c2fb7a";
+exports.apiKey = "107987a003411d65e31f88374a3384a5ee9a5d08";
 
 },{}],2:[function(require,module,exports){
 var User = require('./../js/github.js').userModule;
 
 $(document).ready(function() {
-  var newUser = new User();
   $('#usernameInput').submit(function(event){
+    var newUser = new User();
     event.preventDefault();
     var username = $('#username').val();
     newUser.getInfo(username);
     $('.info').show();
 
-    User.prototype.displayInfoToHtml = function() {
+    displayInfoToHtml = function(object) {
       $('.avatar').text(userNow.userInfo.avatar_url);
       $('.bio').text(userNow.userInfo.bio);
       $('.created').text(userNow.userInfo.created_at);
@@ -21,11 +21,11 @@ $(document).ready(function() {
       $('.repoNumber').text(userNow.userInfo.public_repos);
     };
 
-    User.prototype.displayRepoListToHtml = function() {
-      debugger;
+    displayRepoListToHtml = function(response) {
+        $('.repo').text("");
       for(var i = 0; i< userNow.repoList.length; i++) {
-        $('.repo').append("<li>" + userNow.repoList[i].name + "</li>") +
-        $('.repo').append("<li>" + userNow.repoList[i].description + "</li>" + "<br>");
+        $('.repo').append("<li>" + "your rep name: " + userNow.repoList[i].name + "</li>");
+        $('.repo').append("<li>" + "description of your repo: " + userNow.repoList[i].description + "</li>" + "<br>");
     }
 };
   });
@@ -35,15 +35,14 @@ $(document).ready(function() {
 var apiKey = require('./../.env').apiKey;
 
 function User() {
-  this.fullName = "";
-  this.repoList = [];
+
 }
 
 User.prototype.getInfo = function(login) {
   userNow = this;
   $.get('https://api.github.com/users/' + login + '?access_token=' + apiKey).then(function(object){
     userNow.userInfo = object;
-    userNow.displayInfoToHtml();
+    displayInfoToHtml(object);
     userNow.getRepoList();
   })
   .fail(function(error){
@@ -53,12 +52,9 @@ User.prototype.getInfo = function(login) {
 
 User.prototype.getRepoList = function() {
   userNow = this;
-  repoList = [];
   $.get('https://api.github.com/users/' + userNow.userInfo.login + '/repos' + '?access_token=' + apiKey).then(function(response) {
-      console.log(response);
       userNow.repoList = response;
-      userNow.displayRepoListToHtml();
-      console.log(userNow.repoList[2]);
+      displayRepoListToHtml(response);
     });
   };
 exports.userModule = User;

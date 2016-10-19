@@ -1,14 +1,14 @@
 var User = require('./../js/github.js').userModule;
 
 $(document).ready(function() {
-  var newUser = new User();
   $('#usernameInput').submit(function(event){
+    var newUser = new User();
     event.preventDefault();
     var username = $('#username').val();
     newUser.getInfo(username);
     $('.info').show();
 
-    User.prototype.displayInfoToHtml = function() {
+    displayInfoToHtml = function(object) {
       $('.avatar').text(userNow.userInfo.avatar_url);
       $('.bio').text(userNow.userInfo.bio);
       $('.created').text(userNow.userInfo.created_at);
@@ -17,11 +17,11 @@ $(document).ready(function() {
       $('.repoNumber').text(userNow.userInfo.public_repos);
     };
 
-    User.prototype.displayRepoListToHtml = function() {
-      debugger;
+    displayRepoListToHtml = function(response) {
+        $('.repo').text("");
       for(var i = 0; i< userNow.repoList.length; i++) {
-        $('.repo').append("<li>" + userNow.repoList[i].name + "</li>") +
-        $('.repo').append("<li>" + userNow.repoList[i].description + "</li>" + "<br>");
+        $('.repo').append("<li>" + "your rep name: " + userNow.repoList[i].name + "</li>");
+        $('.repo').append("<li>" + "description of your repo: " + userNow.repoList[i].description + "</li>" + "<br>");
     }
 };
   });
