@@ -12,7 +12,7 @@ _The purpose of this application is to demonstrate that we can produce a working
 
 * _To see the working project please clone the file from my github, it can be found here: https://github.com/meyerjac/github-api_
 
-* _You will need to get an API key from github, go to your github(or create  a profile), go to settings and generate a personal access token, take that key and plug it into a new file named .env at the top of my folder with the following line of code: apiKey = "enter your API key here..."_
+* _You will need to get an API key from github, go to your github(or create  a profile), go to settings and generate a personal access token, take that key and plug it into a new file named .env at the top of my folder with the following line of code: exports.apiKey = "enter your API key here..."_
 * _navigate to the my folder and open it in a text editor such as atom or sublime_
 * _then in your terminal, navigate into the top level of the project and run $ npm install, this will install all the necessary packages and package managers that are running my code, then  $ bower install_
 * _run  $ gulp build in the terminal, and run $ gulp serve which will start a server for your code and it will open the index in a web browser_
