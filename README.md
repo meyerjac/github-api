@@ -6,12 +6,11 @@
 
 ## Description
 
-_The purpose of this application is to demonstrate that we can produce a working API GET request and draw information from the objects returned.  This is week one's intermediate javaScript independent project. Styling isn't a focus, but logic and separation of power and package management is more the focus of this project_
+_The purpose of this application is to demonstrate that we can produce a working API GET request and draw information from the objects returned, and organize them elegantly on the display page.  This is week one's intermediate javaScript independent project. Styling isn't a focus, but logic and separation of power and package management is more the focus of this project_
 
 ## Setup/Installation Requirements
 
 * _To see the working project please clone the file from my github, it can be found here: https://github.com/meyerjac/github-api_
-
 * _You will need to get an API key from github, go to your github(or create  a profile), go to settings and generate a personal access token, take that key and plug it into a new file named .env at the top of my folder with the following line of code: exports.apiKey = "enter your API key here..."_
 * _navigate to the my folder and open it in a text editor such as atom or sublime_
 * _then in your terminal, navigate into the top level of the project and run $ npm install, this will install all the necessary packages and package managers that are running my code, then  $ bower install_
@@ -28,7 +27,7 @@ _If you have any comments or cunstructive critisism, please email me at jackson.
 
 ## Technologies Used
 
-_This Javascript project uses JS, CSS, HTML, but focuses on the uses of front-end and back-end project managers, npm and bower are the main ones _
+_This Javascript project uses JS, CSS, HTML, but focuses on the uses of front-end and back-end project managers, npm and bower _
 
 ### License
 
